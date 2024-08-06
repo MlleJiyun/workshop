@@ -21,6 +21,6 @@ public class Post {
 
     private String title;
     private String description;
-    private String contest;
+    private String content;
 
 }

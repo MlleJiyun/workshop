@@ -1,5 +1,11 @@
 package com.demo.app.dto;
 
-public class PostDto {
+import lombok.Data;
 
+@Data
+public class PostDto {
+    private Long id;
+    private String title;
+    private String description;
+    private String content;
 }
