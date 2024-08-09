@@ -7,9 +7,10 @@ import org.springframework.stereotype.Service;
 
 import com.test.library_management_system.entity.User;
 import com.test.library_management_system.repository.UserRepository;
+import com.test.library_management_system.service.UserService;
 
 @Service
-public class UserServiceImpl {
+public class UserServiceImpl implements UserService {
     @Autowired
     private UserRepository userRepository;
 
