@@ -1,8 +1,42 @@
-* API Gateway 호출 경로
-http://localhost:8081/api/employees/1
-http://localhost:8080/api/departments/100
-http://localhost:8083/api/organizations/10
+* CI
+1. spring boot project
+.. test
+2. build & packaging -> jar
+-> mvn clean package
+3. docker image (Dockerfile)
+-> docker build -t 이미지명 .
+4. docker hub push (Docker Hub)
+docker login
+docker tag myapp:0.0.1 dennis1945/myapp:0.0.1
+docker push dennis1945/myapp:0.0.1
 
-http://localhost:9191/api/employees/1
-http://localhost:9191/api/departments/100
-http://localhost:9191/api/organizations/10
+docker pull dennis1945/myapp:0.0.1
+docker run -p 8080:8080 -d --name myapp dennis1945/myapp:0.0.1
+
+* jar or war 
+jar -> java -jar ...jar -> OS(linux) + JDK 17 
+war -> was server(tomcat ...) 설치된 환경이 필요함
+  os AWS beanstalk, Azure AppService (PaaS)
+
+* Services간의 호출 방법
+RestTemplate
+WebClient(...o)
+Openfeign(o)
+
+- 동기방식
+  REST, gRPC
+- 비동기방식
+  메시지 방식(kafka, rabbit mq...)
+
+* CD
+...test
+5. docker run ...
+
+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
+docker tag myapp:0.0.1 ghcr.io/itgenius4u/myapp:0.0.1
+docker push ghcr.io/itgenius4u/myapp:0.0.1
+
+rest api(microservices)
+on cloud
+-> cloud native application
+cncf

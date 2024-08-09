@@ -1,0 +1,7 @@
+* Github Container Registry 로그인
+docker login ghcr.io -u github아이디
+Password: Personal Access Key 입력
+
+* GitHub Container Registry에 이미지 push
+docker tag 이미지명:태크 ghcr.io/GitHub아이디/이미지명:태그
+docker push ghcr.io/GitHub아이디/이미지명:태크

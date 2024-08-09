@@ -1,0 +1,12 @@
+- Docker Private Registry 구축하기
+
+docker pull registry
+docker run -itd --name local-registry -p 5000:5000 registry
+
+/etc/init.d/docker에 DOCKER_OPTS=--insecure-registry localhost:5000 추가
+
+/etc/docker/daemon.json 생성후
+{
+    "insecure-registries": ["localhost:5000"]
+}
+sudo systemctl restart docker 서비스 재시작

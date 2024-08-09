@@ -1,4 +1,4 @@
-- Dockerfile로 배포하기
+- Dockerfile로 패키징, 이미지 생성
 mvn clean package
 
 ### Dockerfile #######################
@@ -28,3 +28,22 @@ docker run --name 컨테이너이름 -d -p 9001:9001 -e SPRING_DATASOURCE_URL=jd
 - docker compose으로 배포하기
 docker compose up -d
 docker compose down
+
+* Docker Hub에 push하기
+
+* CI
+1. spring boot project
+.. test
+2. build & packaging -> jar
+-> mvn clean package
+3. docker image (Dockerfile)
+-> docker build -t 이미지명 .
+4. docker hub push (Docker Hub)
+docker login
+docker tag myapp:0.0.1 dennis1945/myapp:0.0.1
+docker push dennis1945/myapp:0.0.1
+
+* CD
+...test
+5. docker run ...
+

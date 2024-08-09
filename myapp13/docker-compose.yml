@@ -1,0 +1,14 @@
+services:
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      TZ: Asia/Seoul
+    ports:
+      - 3306:3306
+  myapp13:
+    image: dennis1945/myapp:0.0.1
+    container_name: myapp13
+    ports:
+      - 8080:8080

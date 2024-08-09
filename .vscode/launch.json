@@ -89,6 +89,16 @@
             "projectName": "api-gateway",
             "args": "",
             "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-LibraryManagementSystemApplication<library-management-system>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.test.library_management_system.LibraryManagementSystemApplication",
+            "projectName": "library-management-system",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
         }
     ]
 }
