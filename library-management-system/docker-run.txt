@@ -1,0 +1,4 @@
+docker network create -d bridge mynet
+
+docker run --name mysql-db -e MYSQL_ROOT_PASSWORD=1234 -e MYSQL_USER=user1 -e MYSQL_PASSWORD=1234 -e MYSQL_DATABASE=library-db --net mynet -d -p 3306:3306 mysql:latest
+docker run --name library-app -d -p 8080:8080 -e SPRING_DATASOURCE_URL=jdbc:mysql://mysql-db:3306/library-db -e MYSQL_USER=user1 -e MYSQL_PASSWORD=1234 --net mynet library-app:0.0.1
